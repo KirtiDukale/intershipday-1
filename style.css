@@ -1,0 +1,73 @@
+bbody{
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1,h2{
+    text-align: center;
+    color: darkblue;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+label{
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea{
+    height: 100px;
+}
+
+.gender{
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 15px;
+    background-color: darkblue;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: blue;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th{
+    background-color: darkblue;
+    color: white;
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
