@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management System</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input {
+        width: 70%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .delete-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Management System</h2>
+
+    <input type="text" id="studentName" placeholder="Enter Student Name">
+    <button id="addStudent">Add Student</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Student Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Empty array to store students
+    let students = [];
+
+    // Add Student Event Listener
+    document.getElementById("addStudent").addEventListener("click", function () {
+
+        const nameInput = document.getElementById("studentName");
+        const studentName = nameInput.value.trim();
+
+        if (studentName === "") {
+            alert("Please enter student name!");
+            return;
+        }
+
+        // Create student object
+        const student = {
+            id: Date.now(),
+            name: studentName
+        };
+
+        // Store in array
+        students.push(student);
+
+        // Update table
+        displayStudents();
+
+        // Clear input field
+        nameInput.value = "";
+    });
+
+    // Display students in table
+    function displayStudents() {
+        const tableBody = document.getElementById("studentTableBody");
+
+        tableBody.innerHTML = "";
+
+        students.forEach((student, index) => {
+            const row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${student.name}</td>
+                    <td>
+                        <button class="delete-btn" onclick="deleteStudent(${student.id})">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+            tableBody.innerHTML += row;
+        });
+    }
+
+    // Delete Student
+    function deleteStudent(id) {
+        students = students.filter(student => student.id !== id);
+        displayStudents();
+    }
+</script>
+
+</body>
+</html>
