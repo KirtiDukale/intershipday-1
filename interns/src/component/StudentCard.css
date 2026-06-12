@@ -1,0 +1,85 @@
+.student-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.student-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.student-role {
+  margin: 0 0 6px;
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.student-card h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.status-active {
+  background: rgba(16, 185, 129, 0.14);
+  color: #047857;
+}
+
+.status-inactive {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+}
+
+.student-card-body {
+  display: grid;
+  gap: 0.7rem;
+  color: #334155;
+}
+
+.student-card-body strong {
+  color: #0f172a;
+}
+
+.status-message {
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.toggle-button {
+  width: fit-content;
+  padding: 0.85rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.toggle-button:hover {
+  background: #0f766e;
+  transform: translateY(-1px);
+}
